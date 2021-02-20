@@ -1,0 +1,72 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+    
+    <div class="title">
+    
+        <nav>
+            <div id="inbox" class="navitem">
+                <i class="fas fa-inbox"></i>
+                <p>Inbox</p>
+            </div>
+            <div id="compose" class="navitem">
+                <i class="fas fa-pen-square"></i>
+                <p>Compose</p>
+
+            </div>
+            <div id="sent" class="navitem">
+                <i class="fas fa-paper-plane"></i>
+                <p>Sent</p>
+
+            </div>
+            <div id="archive" class="navitem">
+                <i class="fas fa-archive"></i>
+                <p>Archive</p>
+
+            </div>
+            <div id="logout" class="navitem">
+                <a href="{% url 'logout' %}">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <p>Sign Out</p>
+                </a>
+            </div>
+            
+        </nav>
+
+    </div>
+
+    
+    
+
+    <div id="emails-view">
+    </div>
+
+    <div id="selected-email-view">
+    </div>
+
+    <div id="compose-view">
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            
+            <div class="compose-view-buttons">
+                <span class="sendbutton">
+                    <i onclick=sendemail() class="fas fa-paper-plane"></i><p>Send</p>
+                </span>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

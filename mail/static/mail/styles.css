@@ -1,0 +1,304 @@
+html {
+    font-family: Roboto;
+    
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 150px 1fr 1fr;
+    grid-template-rows: 100vh;
+    background-color: rgb(246, 247, 250);
+}
+
+/*******************************/
+
+/* nav bar styling starts here */
+
+.title {
+    color: rgb(172, 164, 160);
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+nav {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+}
+
+.navitem {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(32, 36, 49);
+    height: 20%;
+}
+
+.navitem:hover, .navitem a:hover {
+    color: rgb(255, 0, 45);
+}
+
+.navitem p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 10px
+}
+
+.navitem i {
+    font-size: 200%
+}
+
+.navitem a {
+    text-decoration: none;
+    color: rgb(172, 164, 160);
+    cursor: default;
+    text-align: center;
+}
+
+/*******************************/
+
+/* emails view styling starts here */
+
+#emails-view {
+    height: 100vh;
+    overflow-y: scroll;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 0, 45);
+}
+
+.email {
+    display: grid;
+    border: 1px solid rgb(242, 243, 248);
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.emailaddress{
+    font-size: 150%;
+    font-weight: 400;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    text-align: left;
+    padding: 5px 5px 2px 5px;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.timestamp {
+    font-size: 100%;
+    font-weight: 200;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    text-align: right;
+    padding: 5px 5px 2px 5px;
+    margin: 0px;
+}
+
+.subject {
+    font-size: 100%;
+    font-weight: 300;
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    text-align: left;
+    padding: 2px 5px 5px 5px; 
+    margin: 0px;
+}
+
+.email:hover {
+    border: 1px solid rgb(255, 0, 45);
+    border-left: 4px solid rgb(255, 0, 45);
+}
+
+.unreademail {
+    background-color: white;
+}
+
+.reademail {
+    background-color: rgb(247, 248, 251);
+}
+
+/*******************************/
+
+/* message detail styling starts here */
+
+#selected-email-view {
+    position: relative;
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    background-color:rgb(246, 247, 250);
+    border-left: 1px solid rgb(242, 243, 248)
+}
+
+.messageheader {
+    border-bottom: 1px solid rgb(236, 238, 243);
+    padding: 10px
+}
+
+.messagesubheader {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.subheadergroup {
+    font-size: 80%;
+}
+
+.subheadergroup p {
+    display: inline;
+}
+
+.subheadergroup .data {
+    font-weight: 500
+}
+
+.messagecontent {
+    padding: 10px;
+    white-space: pre-wrap;
+    max-height: 75vh;
+    overflow-y: scroll;
+
+}
+
+.email-view-buttons {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 125%;
+    padding: 20px 10px 20px 10px;
+}
+
+.replybutton, .replybutton i, .replybutton p, .archivebutton, .archinvebutton i, .archivebutton p {
+    display: inline;
+    transition: 0.2s;
+}
+
+.replybutton:hover, .archivebutton:hover {
+    color: rgb(255, 0, 45)
+}
+
+.replybutton i, .archivebutton i {
+    margin-right: 10px;
+}
+
+/********************************/
+
+/* Compose view styling */
+
+
+#compose-view {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    padding: 50px;
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+
+.form-control:focus {
+    border: 1px solid rgb(255, 0, 45);
+    border-left: 4px solid rgb(255, 0, 45);
+    box-shadow: none;
+    
+}
+
+textarea {
+    min-height: 300px;
+}
+
+.compose-view-buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 125%;
+}
+
+.sendbutton {
+    margin: 20px;
+    transition: 0.2s;
+}
+
+.sendbutton:hover {
+    color: rgb(255, 0, 45)
+}
+.sendbutton, .sendbutton i, .sendbutton p {
+    display: inline;
+}
+
+.sendbutton i {
+    margin-right: 10px;
+}
+
+
+/********************************/
+
+/* Login/Register page styling */
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    padding: 50px;
+    background-color: rgb(32, 36, 49);
+}
+
+.formholder {
+    padding: 30px;
+    background-color: rgb(246, 247, 250);
+    border-radius: 5px;
+}
+
+.formholder h2{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.loginbuttonholder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbutton {
+    background-color: rgb(246, 247, 250);
+    border: 1px solid rgb(32, 36, 49);
+    transition: 0.2s;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.loginbutton:hover {
+    border: 1px solid rgb(255, 0, 45);
+    color: rgb(255, 0, 45);
+}
+
+.formholder p {
+    margin-top: 30px;
+}
+
+.formholder a {
+    color: rgb(255, 0, 45);
+}
+
